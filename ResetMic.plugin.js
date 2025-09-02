@@ -1,8 +1,8 @@
 /**
  * @name ResetMic
  * @author evo
- * @version 1.0.5
- * @description Bring your mic back from the dead - evo
+ * @version 1.0.7
+ * @description Bring your mic and output back from the dead - evo
  */
 
 module.exports = class ResetMic {
@@ -31,32 +31,42 @@ module.exports = class ResetMic {
 
         let resetBtn = deafenBtn.cloneNode(true);
         resetBtn.id = "resetMicBtn";
-        resetBtn.setAttribute("aria-label", "Reset Mic");
+        resetBtn.setAttribute("aria-label", "Reset Mic & Output");
         resetBtn.style.backgroundColor = "var(--status-danger)";
 
         resetBtn.onclick = async () => {
             try {
-                // Search for module with setInputDevice
-                const DeviceModule = BdApi.Webpack.getModule(
+                // --- Input reset ---
+                const InputModule = BdApi.Webpack.getModule(
                     (m) =>
                         m &&
                         typeof m === "object" &&
                         ("setInputDevice" in m || "setInputDevice" in (m.__proto__ || {}))
                 );
 
-                if (!DeviceModule || typeof DeviceModule.setInputDevice !== "function") {
+                if (!InputModule || typeof InputModule.setInputDevice !== "function") {
                     BdApi.showToast("❌ Could not find input device module!", { type: "error" });
-                    console.log("ResetMic debug: No module with setInputDevice found.", DeviceModule);
+                    console.log("ResetMic debug: No module with setInputDevice found.", InputModule);
                     return;
                 }
 
-                // Call with "default" to reselect the default mic
-                await DeviceModule.setInputDevice("default");
+                await InputModule.setInputDevice("default");
 
-                BdApi.showToast("✅ MIC REVIVED - MADE BY EVO", { type: "success" });
+                // --- Output reset ---
+                const AudioModule = BdApi.Webpack.getModule(
+                    (m) =>
+                        m &&
+                        typeof m === "object" &&
+                        typeof m.setOutputDevice === "function"
+                );
+
+                if (AudioModule) await AudioModule.setOutputDevice("default");
+
+                BdApi.showToast("✅ MIC & AUDIO OUTPUT REVIVED - MADE BY EVO", { type: "success" });
+
             } catch (err) {
                 console.error("ResetMic error:", err);
-                BdApi.showToast("❌ Mic reset failed. Check console for details.", { type: "error" });
+                BdApi.showToast("❌ Reset failed. Check console for details.", { type: "error" });
             }
         };
 
