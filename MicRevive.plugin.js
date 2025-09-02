@@ -2,7 +2,7 @@
  * @name MicRevive
  * @author evo
  * @version 1.0.7
- * @description Bring your mic and output back from the dead
+ * @description revives your mic
  */
 
 module.exports = class ResetMic {
