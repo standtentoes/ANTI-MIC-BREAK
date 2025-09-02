@@ -1,8 +1,8 @@
 /**
- * @name ResetMic
+ * @name MicRevive
  * @author evo
  * @version 1.0.7
- * @description Bring your mic and output back from the dead - evo
+ * @description Bring your mic and output back from the dead
  */
 
 module.exports = class ResetMic {
@@ -62,7 +62,7 @@ module.exports = class ResetMic {
 
                 if (AudioModule) await AudioModule.setOutputDevice("default");
 
-                BdApi.showToast("✅ MIC & AUDIO OUTPUT REVIVED - MADE BY EVO", { type: "success" });
+                BdApi.showToast("MIC GOT ITS REBBOT CARD - MADE BY EVO", { type: "success" });
 
             } catch (err) {
                 console.error("ResetMic error:", err);
