@@ -11,3 +11,6 @@ GUIDE: https://youtu.be/VUSUwDBUJHY?si=pyf-uxA9LEAW_nsN
 
 I've been actually working on this for a while originally i tried to attatch it to audio.dg in task manager
 & create something much more complex, but it works 50x better this way & is way easier
+
+# ----------------------------- LOGS -----------------------------
+# = RESETS OUTPUT | 9.2.25
