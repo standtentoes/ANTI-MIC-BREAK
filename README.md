@@ -1,6 +1,6 @@
 # MADE BY EVO
 
-convenient betterdiscord plugin that resets your mic with a single click. - MADE BY EVO
+convenient betterdiscord plugin that resets your mic with a single click.
 
 betterdiscord plugin for discord packers, whenever your mic breaks you click the button it revives your microphone
 instead of having to go all the way into your discord voice & video settings & reselecting your mic
