@@ -1,5 +1,3 @@
-![COULD NOT BE LOADED](images.png)
-
 # MADE BY EVO
 
 
@@ -8,6 +6,7 @@ convenient betterdiscord plugin that unbreaks your mic with a single click.
 betterdiscord plugin for discord packers, whenever your mic breaks you click the button it revives your microphone & your audio
 instead of having to go all the way into your discord voice & video settings & reselecting your mic & headphones
 
+![COULD NOT BE LOADED](images.png)
 
 
 # SET THE MIC YOU USE AS YOUR DEFAULT INPUT DEVICE IN YOUR SOUND SETTINGS & SET YOUR HEADPHONES, EARBUDS, AIRPODS OR WHATEVER AS YOUR DEFAULT OUTPUT!
